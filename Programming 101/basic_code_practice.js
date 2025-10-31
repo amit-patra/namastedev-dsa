@@ -19,17 +19,6 @@ let obj = {
 
 // console.log(obj.c);
 
-function elegibleToVote(age){
-    if(age<18){
-        console.log("Not Elegible for vote");
-        
-    } else{
-        console.log("Elegible");
-        
-    }
-}
-
-elegibleToVote(10);
 
 
 
