@@ -44,7 +44,7 @@ console.log("Negetive Number List:: ", searchNegetiveNumber());*/
 console.log("Largest Number of an array:: ", searchLargestNumber()); */
 
 // Smallest number of an array
-function searchSmallestNumber(){
+/*function searchSmallestNumber(){
     // let maxNum= Number.NEGATIVE_INFINITY;
     let maxNum= Infinity;
     let arr = [5,0,10,8,-17,500];
@@ -55,4 +55,37 @@ function searchSmallestNumber(){
     }
     return maxNum;
 }
-console.log("Smallest Number of an array:: ", searchSmallestNumber());
+console.log("Smallest Number of an array:: ", searchSmallestNumber()); */
+
+// Second Largest number of an array
+/* 
+    Corner Cases:
+    1. Array is empty
+    2. Array is negetive number
+    3. Array has duplicate number
+****/
+function secondLargestNumber(){
+    // let arr = [];
+    // let arr = [30]
+    // let arr = [35,0,10,8,-17,30];
+    // let arr = [-35,-0,-10,-8,-17,-30];
+    let arr = [10,3,5,10, 20,20];
+    if(arr.length<2){
+        return "Array have atleast 2 elements";
+    }
+    let max1 = -Infinity;
+    let max2 = -Infinity;
+    for(let i=0; i<arr.length; i++){
+        if(arr[i]> max1){
+            max2 = max1;
+            max1 = arr[i]
+        } 
+        else if(arr[i]>max2 && arr[i] !== max1){
+            max2 = arr[i]
+        }
+    }
+    return max2;
+}
+
+console.log("2nd Largest number is: ", secondLargestNumber());
+
