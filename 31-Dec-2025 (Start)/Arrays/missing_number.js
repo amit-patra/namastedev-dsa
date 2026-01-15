@@ -1,5 +1,4 @@
 /**
- * 
  * Missing Number
  * https://leetcode.com/problems/missing-number/description/
  Input: nums = [3,0,1]
