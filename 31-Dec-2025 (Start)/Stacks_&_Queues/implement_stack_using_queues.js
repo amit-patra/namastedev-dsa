@@ -67,3 +67,53 @@ MyStack.prototype.top = function () {
 MyStack.prototype.empty = function () {
   return this.q1.length === 0;
 };
+
+/**
+ * !Code using One queue
+ */
+
+var MyStack = function () {
+  this.q = [];
+};
+
+/**
+ * @param {number} x
+ * @return {void}
+ */
+MyStack.prototype.push = function (x) {
+  this.q.push(x); //Time Complexity: O(1)
+};
+
+/**
+ * @return {number}
+ */
+MyStack.prototype.pop = function () {
+  let len = this.q.length;
+  for (let i = 0; i < len - 1; i++) {
+    //Time Complexity: O(n)
+    this.q.push(this.q.shift());
+  }
+  return this.q.shift();
+};
+
+/**
+ * @return {number}
+ */
+MyStack.prototype.top = function () {
+  let len = this.q.length;
+  for (let i = 0; i < len - 1; i++) {
+    //Time Complexity: O(n)
+    this.q.push(this.q.shift());
+  }
+  let ans = this.q[0];
+  this.q.shift();
+  this.q.push(ans);
+  return ans;
+};
+
+/**
+ * @return {boolean}
+ */
+MyStack.prototype.empty = function () {
+  return this.q.length == 0; //Time Complexity: O(1)
+};
